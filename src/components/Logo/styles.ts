@@ -14,20 +14,18 @@ const wrapperModifiers = {
     height: 5.9rem;
   `,
 
-  hideOnMobile: () => `
-  ${media.lessThan('medium')`
-    width: 5.8rem;
-    height: 4.5rem;
-
-    svg {
-      height: 5.4rem;
-      pointer-events: none;
-    }
-
-    .text {
-      display: none;
-    }
-  `}
+  hideOnMobile: () => css`
+    ${media.lessThan('medium')`
+      width: 5.8rem;
+      height: 4.5rem;
+      svg {
+        height: 4.5rem;
+        pointer-events: none;
+      }
+      .text {
+        display: none;
+      }
+    `}
   `
 }
 
