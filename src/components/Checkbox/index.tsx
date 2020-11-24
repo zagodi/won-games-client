@@ -40,7 +40,7 @@ const Checkbox = ({
       />
       {!!label && (
         <S.Label htmlFor={labelFor} labelColor={labelColor}>
-          {label}
+          {label} Oi
         </S.Label>
       )}
     </S.Wrapper>

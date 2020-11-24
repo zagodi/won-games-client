@@ -124,7 +124,7 @@ export const Price = styled.div<PriceProps>`
     height: 3rem;
     align-items: center;
 
-    ${!isPromotional && priceModifiers.default(theme)}
-    ${isPromotional && priceModifiers.promotional(theme)}
+    ${!isPromotional && priceModifiers.default(theme)};
+    ${isPromotional && priceModifiers.promotional(theme)};
   `}
 `
