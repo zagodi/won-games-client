@@ -1,8 +1,8 @@
-import 'match-media-mock' // Imported from .jest folder
+import 'match-media-mock'
 import { screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import BannerSlider from '.'
-import { renderWithTheme } from 'utils/tests/helpers'
 
 const items = [
   {
@@ -27,8 +27,6 @@ describe('<BannerSlider />', () => {
     const { container } = renderWithTheme(<BannerSlider items={items} />)
 
     expect(container.querySelector('.slick-vertical')).toBeInTheDocument()
-
-    // expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render with 1 active item', () => {
@@ -44,5 +42,11 @@ describe('<BannerSlider />', () => {
     expect(
       screen.getByRole('heading', { name: /defy death 2/i, hidden: true })
     ).toBeInTheDocument()
+  })
+
+  it('should render with the dots', () => {
+    const { container } = renderWithTheme(<BannerSlider items={items} />)
+
+    expect(container.querySelector('.slick-dots')).toBeInTheDocument()
   })
 })
