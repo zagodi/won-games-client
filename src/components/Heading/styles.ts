@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 import { HeadingProps, LineColors } from '.'
 
-const wrapperModifiers = {
+export const wrapperModifiers = {
   lineleft: (theme: DefaultTheme, lineColor: LineColors) => `
     padding-left: ${theme.spacings.xxsmall};
     border-left: 0.7rem solid ${theme.colors[lineColor]};
