@@ -94,7 +94,7 @@ describe('<Game />', () => {
     const cover = screen.getByRole('image', { name: /cover/i })
 
     expect(cover).toHaveStyle({
-      backgroundImage: 'url(bg-image.jpg',
+      backgroundImage: 'url(bg-image.jpg)',
       height: '39.5rem'
     })
 
