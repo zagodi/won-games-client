@@ -8,7 +8,7 @@ import TextField from '.'
 
 describe('<TextField />', () => {
   it('Renders with Label', () => {
-    renderWithTheme(<TextField label="Label" labelFor="Field" id="Field" />)
+    renderWithTheme(<TextField label="Label" name="Field" />)
 
     expect(screen.getByLabelText('Label')).toBeInTheDocument()
   })
@@ -45,8 +45,7 @@ describe('<TextField />', () => {
       <TextField
         onInput={onInput}
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
         disabled
       />
     )
@@ -66,12 +65,7 @@ describe('<TextField />', () => {
   it('Changes its value when typing', async () => {
     const onInput = jest.fn()
     renderWithTheme(
-      <TextField
-        onInput={onInput}
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
-      />
+      <TextField onInput={onInput} label="TextField" name="TextField" />
     )
 
     const input = screen.getByRole('textbox')
@@ -86,9 +80,7 @@ describe('<TextField />', () => {
   })
 
   it('Is accessible by tab', () => {
-    renderWithTheme(
-      <TextField label="TextField" labelFor="TextField" id="TextField" />
-    )
+    renderWithTheme(<TextField label="TextField" name="TextField" />)
 
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()
@@ -102,7 +94,7 @@ describe('<TextField />', () => {
       <TextField
         icon={<Email data-testid="icon" />}
         label="TextField"
-        labelFor="TextField"
+        name="TextField"
         error="Error message"
       />
     )
@@ -113,14 +105,7 @@ describe('<TextField />', () => {
   })
 
   it('Is not accessible by tab when disabled', () => {
-    renderWithTheme(
-      <TextField
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
-        disabled
-      />
-    )
+    renderWithTheme(<TextField label="TextField" name="TextField" disabled />)
 
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()
