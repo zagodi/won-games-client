@@ -30,10 +30,7 @@ export async function getStaticProps() {
         img:
           // `http://localhost:1337${game.cover?.url}` ||
           'https://source.unsplash.com/user/willianjusten/300x140',
-        price: new Intl.NumberFormat('en', {
-          style: 'currency',
-          currency: 'USD'
-        }).format(game.price)
+        price: game.price
       })),
       filterItems: filterItemsMock
     }
